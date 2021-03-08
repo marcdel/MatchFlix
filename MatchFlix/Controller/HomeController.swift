@@ -8,9 +8,17 @@
 import UIKit
 
 class HomeController: UIViewController {
+    private let topStack = HomeNavigationStackView()
+
+    fileprivate func configureUI() {
+        view.backgroundColor = .white
+        view.addSubview(topStack)
+        topStack.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, right: view.rightAnchor)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .systemPink
+        configureUI()
     }
 }

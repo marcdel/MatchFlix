@@ -15,6 +15,8 @@
 		49B4B57725F43809005E700D /* MatchFlixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B4B57625F43809005E700D /* MatchFlixTests.swift */; };
 		49B4B58225F43809005E700D /* MatchFlixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B4B58125F43809005E700D /* MatchFlixUITests.swift */; };
 		49B4B5A925F43CF6005E700D /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B4B5A825F43CF6005E700D /* HomeController.swift */; };
+		49B4B5AE25F43F66005E700D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B4B5AD25F43F66005E700D /* Extensions.swift */; };
+		49B4B5B325F43FB9005E700D /* HomeNavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B4B5B225F43FB9005E700D /* HomeNavigationStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		49B4B58125F43809005E700D /* MatchFlixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchFlixUITests.swift; sourceTree = "<group>"; };
 		49B4B58325F43809005E700D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49B4B5A825F43CF6005E700D /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		49B4B5AD25F43F66005E700D /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = ../../../../../Downloads/Extensions.swift; sourceTree = "<group>"; };
+		49B4B5B225F43FB9005E700D /* HomeNavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 		49B4B59225F43A69005E700D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				49B4B5B225F43FB9005E700D /* HomeNavigationStackView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -172,6 +177,7 @@
 		49B4B59925F43BA8005E700D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				49B4B5AD25F43F66005E700D /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -308,7 +314,9 @@
 			files = (
 				49B4B56025F43807005E700D /* AppDelegate.swift in Sources */,
 				49B4B56225F43807005E700D /* SceneDelegate.swift in Sources */,
+				49B4B5B325F43FB9005E700D /* HomeNavigationStackView.swift in Sources */,
 				49B4B5A925F43CF6005E700D /* HomeController.swift in Sources */,
+				49B4B5AE25F43F66005E700D /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
