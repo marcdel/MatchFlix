@@ -18,6 +18,7 @@
 		49B4B5AE25F43F66005E700D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B4B5AD25F43F66005E700D /* Extensions.swift */; };
 		49B4B5B325F43FB9005E700D /* HomeNavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B4B5B225F43FB9005E700D /* HomeNavigationStackView.swift */; };
 		49B4B5B825F6960F005E700D /* BottomControlsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B4B5B725F6960F005E700D /* BottomControlsStackView.swift */; };
+		49B4B5BD25F6E82C005E700D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B4B5BC25F6E82C005E700D /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		49B4B5AD25F43F66005E700D /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = ../../../../../Downloads/Extensions.swift; sourceTree = "<group>"; };
 		49B4B5B225F43FB9005E700D /* HomeNavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationStackView.swift; sourceTree = "<group>"; };
 		49B4B5B725F6960F005E700D /* BottomControlsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomControlsStackView.swift; sourceTree = "<group>"; };
+		49B4B5BC25F6E82C005E700D /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			children = (
 				49B4B5B225F43FB9005E700D /* HomeNavigationStackView.swift */,
 				49B4B5B725F6960F005E700D /* BottomControlsStackView.swift */,
+				49B4B5BC25F6E82C005E700D /* CardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49B4B5BD25F6E82C005E700D /* CardView.swift in Sources */,
 				49B4B5B825F6960F005E700D /* BottomControlsStackView.swift in Sources */,
 				49B4B56025F43807005E700D /* AppDelegate.swift in Sources */,
 				49B4B56225F43807005E700D /* SceneDelegate.swift in Sources */,

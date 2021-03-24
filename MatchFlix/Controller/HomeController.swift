@@ -32,9 +32,21 @@ class HomeController: UIViewController {
         stack.bringSubviewToFront(deckView)
     }
 
+    fileprivate func configureCards() {
+        let cardView1 = CardView()
+        let cardView2 = CardView()
+
+        deckView.addSubview(cardView1)
+        deckView.addSubview(cardView2)
+
+        cardView1.fillSuperview()
+        cardView2.fillSuperview()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureUI()
+        configureCards()
     }
 }
