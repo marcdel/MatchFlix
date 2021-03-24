@@ -9,12 +9,12 @@ import UIKit
 
 class CardView: UIView {
     private let imageView: UIImageView = {
-        let iv = UIImageView()
+        let image = UIImageView()
 
-        iv.contentMode = .scaleAspectFill
-        iv.image = #imageLiteral(resourceName: "kelly2")
+        image.contentMode = .scaleAspectFill
+        image.image = #imageLiteral(resourceName: "kelly2")
 
-        return iv
+        return image
     }()
 
     private let infoLabel: UILabel = {
@@ -30,6 +30,14 @@ class CardView: UIView {
         return label
     }()
 
+    private lazy var infoButton: UIButton = {
+        let button = UIButton(type: .system)
+
+        button.setImage(#imageLiteral(resourceName: "info_icon").withRenderingMode(.alwaysOriginal), for: .normal)
+
+        return button
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -38,10 +46,15 @@ class CardView: UIView {
         clipsToBounds = true
 
         addSubview(imageView)
-        addSubview(infoLabel)
-
         imageView.fillSuperview()
+
+        addSubview(infoLabel)
         infoLabel.anchor(left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingLeft: 16, paddingBottom: 16, paddingRight: 16)
+
+        addSubview(infoButton)
+        infoButton.setDimensions(height: 40, width: 40)
+        infoButton.centerY(inView: infoLabel)
+        infoButton.anchor(right: rightAnchor, paddingRight: 16)
     }
 
     required init?(coder: NSCoder) {
