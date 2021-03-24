@@ -8,11 +8,13 @@
 import UIKit
 
 class CardView: UIView {
+    private let gradientLayer = CAGradientLayer()
+
     private let imageView: UIImageView = {
         let image = UIImageView()
 
         image.contentMode = .scaleAspectFill
-        image.image = #imageLiteral(resourceName: "kelly2")
+        image.image = #imageLiteral(resourceName: "jane1")
 
         return image
     }()
@@ -48,6 +50,8 @@ class CardView: UIView {
         addSubview(imageView)
         imageView.fillSuperview()
 
+        configureGradientLayer()
+
         addSubview(infoLabel)
         infoLabel.anchor(left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingLeft: 16, paddingBottom: 16, paddingRight: 16)
 
@@ -57,7 +61,17 @@ class CardView: UIView {
         infoButton.anchor(right: rightAnchor, paddingRight: 16)
     }
 
+    override func layoutSubviews() {
+        gradientLayer.frame = self.frame
+    }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func configureGradientLayer() {
+        gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+        gradientLayer.locations = [0.5, 1.1]
+        layer.addSublayer(gradientLayer)
     }
 }
