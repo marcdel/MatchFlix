@@ -72,16 +72,11 @@ class CardView: UIView {
     }
 
     @objc func handlePanGesture(sender: UIPanGestureRecognizer) {
-        let translation = sender.translation(in: nil)
-
         switch sender.state {
         case .began:
              break
         case .changed:
-            let degrees: CGFloat = translation.x / 20
-            let angle = degrees * .pi / 180
-            let rotationalTransform = CGAffineTransform(rotationAngle: angle)
-            self.transform = rotationalTransform.translatedBy(x: translation.x, y: translation.y)
+            panCard(sender: sender)
         case .ended:
             resetCardPosition(sender: sender)
         @unknown default:
@@ -89,7 +84,19 @@ class CardView: UIView {
         }
     }
 
-    func resetCardPosition(sender: UIPanGestureRecognizer) {
+    @objc func handleChangePhoto(sender: UITapGestureRecognizer) {
+
+    }
+
+    fileprivate func panCard(sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: nil)
+        let degrees: CGFloat = translation.x / 20
+        let angle = degrees * .pi / 180
+        let rotationalTransform = CGAffineTransform(rotationAngle: angle)
+        self.transform = rotationalTransform.translatedBy(x: translation.x, y: translation.y)
+    }
+
+    fileprivate func resetCardPosition(sender: UIPanGestureRecognizer) {
         UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.1, options: .curveEaseOut) {
             self.transform = .identity
         } completion: { _ in
@@ -98,17 +105,13 @@ class CardView: UIView {
 
     }
 
-    @objc func handleChangePhoto(sender: UITapGestureRecognizer) {
-
-    }
-
-    func configureGradientLayer() {
+    fileprivate func configureGradientLayer() {
         gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
         gradientLayer.locations = [0.5, 1.1]
         layer.addSublayer(gradientLayer)
     }
 
-    func configureGestureRecognizers() {
+    fileprivate func configureGestureRecognizers() {
         let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture))
         addGestureRecognizer(pan)
 
