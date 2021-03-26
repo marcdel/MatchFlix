@@ -47,6 +47,8 @@ class CardView: UIView {
         layer.cornerRadius = 10
         clipsToBounds = true
 
+        configureGestureRecognizers()
+
         addSubview(imageView)
         imageView.fillSuperview()
 
@@ -69,9 +71,39 @@ class CardView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    @objc func handlePanGesture(sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: nil)
+
+        switch sender.state {
+        case .began:
+             break
+        case .changed:
+            let degrees: CGFloat = translation.x / 20
+            let angle = degrees * .pi / 180
+            let rotationalTransform = CGAffineTransform(rotationAngle: angle)
+            self.transform = rotationalTransform.translatedBy(x: translation.x, y: translation.y)
+        case .ended:
+            break
+        @unknown default:
+            break
+        }
+    }
+
+    @objc func handleChangePhoto(sender: UITapGestureRecognizer) {
+
+    }
+
     func configureGradientLayer() {
         gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
         gradientLayer.locations = [0.5, 1.1]
         layer.addSublayer(gradientLayer)
+    }
+
+    func configureGestureRecognizers() {
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture))
+        addGestureRecognizer(pan)
+
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleChangePhoto))
+        addGestureRecognizer(tap)
     }
 }
