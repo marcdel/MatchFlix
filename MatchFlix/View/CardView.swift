@@ -83,10 +83,19 @@ class CardView: UIView {
             let rotationalTransform = CGAffineTransform(rotationAngle: angle)
             self.transform = rotationalTransform.translatedBy(x: translation.x, y: translation.y)
         case .ended:
-            break
+            resetCardPosition(sender: sender)
         @unknown default:
             break
         }
+    }
+
+    func resetCardPosition(sender: UIPanGestureRecognizer) {
+        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.1, options: .curveEaseOut) {
+            self.transform = .identity
+        } completion: { _ in
+            return
+        }
+
     }
 
     @objc func handleChangePhoto(sender: UITapGestureRecognizer) {
